@@ -1,0 +1,55 @@
+<%= form_for @post do |f| %>
+l<% if @post.errors.any? %>
+<div id="error_explanation">
+<h4><%= pluralize(@post.errors.count, "error") %> prohibited 
+  this post from being saved:</h4>
+<ul>
+<% @post.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+<p>
+<table id="data">
+<tr>
+<td> <%= f.label "name" %></td>
+<td> <%= f.text_field :Name %></td>
+</tr>
+<tr>
+<td>Movie Screen:</td>
+<td><%= f.radio_button(:Movie_Scree, "1") %>
+<%= f.label :Movie_Scree, "1" %><br>
+<%= f.radio_button(:Movie_Scree, "2") %>
+<%= f.label :Movie_Scree, "2" %><br>
+<%= f.radio_button(:Movie_Scree, "3") %>
+<%= f.label :Movie_Scree, "3" %><br>
+<%= f.radio_button(:Movie_Scree, "4") %>
+<%= f.label :Movie_Scree, "4" %><br>
+<%= f.radio_button(:Movie_Scree, "5") %>
+<%= f.label :Movie_Scree, "5" %></td></tr>
+
+<tr>
+<td><%= f.label :Language, "MultiLanguage" %></td>
+<td><%= f.check_box(:Language) %></td>
+</tr>
+
+<tr>
+<td><%= f.label :Price %></td>
+  
+<td><%= f.text_field :Price%></td>
+</tr>
+<tr>
+<td> <%= f.label :Description %></td>
+<td><%= f.text_area :Description %></td>
+</tr>
+ 
+<tr>
+<td><%= f.submit %></td>
+<td><%= link_to 'Home', root_path %></td>
+</tr>
+
+</table>
+</p>
+<% end %>
+</center>
