@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   layout "posts"
 def new
    @post = Post.new
@@ -21,6 +20,8 @@ end
 
 def index
   @posts = Post.all
+  @posts = Post.page(params[:page]).order(:name).per(5)
+
 end
 
 def edit
