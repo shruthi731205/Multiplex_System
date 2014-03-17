@@ -1,11 +1,11 @@
-<%= form_for @post do |f| %>
+<%= form_for :post, :html => { :multipart => true }, url: posts_path  do |f| %>
 l<% if @post.errors.any? %>
 <div id="error_explanation">
-<h4><%= pluralize(@post.errors.count, "error") %> prohibited 
+<h4 style="color:red"><%= pluralize(@post.errors.count, "error") %> prohibited 
   this post from being saved:</h4>
-<ul>
+<ul style="color:red">
 <% @post.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
+<li style="color:red"><%= msg %></li>
 <% end %>
 </ul>
 </div>
@@ -45,11 +45,15 @@ l<% if @post.errors.any? %>
 </tr>
  
 <tr>
+	<td></td>
 <td><%= f.submit %></td>
-<td><%= link_to 'Home', root_path %></td>
 </tr>
 
 </table>
 </p>
+
+ <%= f.label :photo, "Photo" %>
+      <%= f.file_field :photo %>
+<%= link_to 'Home', root_path %>
 <% end %>
 </center>

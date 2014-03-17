@@ -31,7 +31,7 @@ end
 def update
   @post = Post.find(params[:id])
  
-  if @post.update(params[:post].permit(:Name,:Movie_Scree, :Price , :Description, :Language))
+  if @post.update(params[:post].permit(:Name,:Movie_Scree, :Price , :Description, :Language, :photo))
     redirect_to @post
   else
     render 'edit'
@@ -47,7 +47,7 @@ end
 
   private
   def post_params
-    params.require(:post).permit(:Name ,:Movie_Scree, :Price , :Description, :Language)
+    params.require(:post).permit(:Name ,:Movie_Scree, :Price , :Description, :Language, :photo)
   end
 
 end
