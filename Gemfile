@@ -38,8 +38,10 @@ end
 group :production do
   # bundle exec rake doc:rails generates the API under doc/api.
   # gem 'sqlite3'
+  gem 'rails_12factor'
   gem 'pg'
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
