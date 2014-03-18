@@ -14,13 +14,13 @@ def new
 end
 
 
-  def show
+def show
   @post = Post.find(params[:id])
 end
 
 def index
   @posts = Post.all
-  @posts = Post.page(params[:page]).order(:name).per(5)
+  @posts = Post.page(params[:page]).order(:Name).per(5)
 
 end
 
